@@ -37,14 +37,12 @@ public class DataServiceImpl implements IDataService {
 				try {
 					date = format.parse(line.substring(10, 18));
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 				result.add(repository.save(new Data(line.substring(0, 1), Integer.parseInt(line.substring(1, 10)), date, Integer.parseInt(line.substring(18, 27)), line.substring(27, 28), Integer.parseInt(line.substring(28, 38)))));
 			}
 			
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return result;
